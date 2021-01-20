@@ -14,9 +14,10 @@ button{
     color: #f1faee;
     font-size: 20px;
 }
-/* descendant selector */
+/* descendant selector (overruled by direct descendant selector)*/
 p a{
     color: #457b9d;
+    text-decoration: none;
 }
 .references a{
     color: #e63946;
@@ -27,4 +28,40 @@ input + button{
 }
 h2 + button{
     font-size: 20px;
+}
+/* direct descendant selector */
+p > a{
+    color: lightgreen;
+}
+/* attribute selectors */
+input[type="password"],input[type="email"]{
+    color: lightblue;
+}
+/* pseudo classes */
+form button:hover{
+    background-color:#e63946;
+    color: #fff;
+}
+p > a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+button:active{
+    background-color: chocolate;
+}
+div:nth-of-type(2n){
+    background-color: #dfe8dc;
+}
+div:nth-of-type(2n-1){
+    background-color: grey;
+}
+/* pseudo elements */
+h2::first-letter{
+    font-size: 40px;
+}
+h2::first-line{
+    color: purple;
+}
+::selection{
+    background-color: chartreuse;
 }
