@@ -1,0 +1,43 @@
+/* h1{
+    background-color: palegoldenrod;
+    border: 1px solid black;
+    /* changing display type from block (default for H1)
+    to inline */
+    /* display: inline;
+}
+span{
+    background-color: paleturquoise;
+    border: 1px solid black;
+    /* changing display type from inline (default for span)
+    to block */
+    /* display: block;
+} */ 
+h1{
+    background-color: paleturquoise;
+    border: 1px solid black;
+    width: 300px;
+    height: 200px;
+    padding: 50px;
+    margin: 100px;
+    /* all the properties are applied to block elements
+    properly */
+    display: none; /* this hides the element, from viewer, it still exists on the page */
+}
+
+span{
+    background-color: palevioletred;
+    border: 1px solid black;
+    width: 500px; /* property is ignored */
+    padding: 50px; /* overlays itself onto other content */
+    margin: 50px; /* only acknowledged horizontally */ /* this is because it is an inline element */
+}
+
+div{
+    height: 200px;
+    width: 200px;
+    background-color: lightgreen;
+    border: 5px solid grey;
+    /* if we want the elements to be inline and still
+    have their block characteristics, we use inline-block */
+    display: inline-block;
+}

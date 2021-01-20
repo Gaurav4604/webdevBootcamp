@@ -1,0 +1,61 @@
+body{
+    /* ensures no extra space is
+    used by the web page from the start */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+span{
+    margin-left: 20px;
+    /* covered in display part
+    this lower margin doesn't work */
+    margin-bottom: 20px;
+}
+body > *{
+    /* top | right | bottom | left */ 
+    margin: 10px 0px 0px 0px;
+}
+div{
+    width: 200px;
+    height: 200px;
+}
+h1{
+    background-color: pink;
+    width: 200px;
+    padding-left: 100px;
+    padding-top: 20px;
+}
+#one{
+    background-color: #e5989b;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    /* border box shrinks content inside to accomodate border inside given site */
+    box-sizing: border-box;
+
+}
+#two{
+    background-color: #b5838d;
+    border-color: #ffcdb2;
+    border-width: 3px;
+    border-style: dashed;
+    border-left-width: 8px;
+    padding-right: 30px;
+}
+#three{
+    background-color: #736c83;
+    /* width | style | color */
+    border: 4px solid black;
+    border-left-style: dotted;
+}
+#four{
+    background-color: #7c7a81;
+    /* border radius property */
+    border: 4px solid red;
+    border-radius: 50%; /* making circle */
+}
+button{
+    /* shorthand padding */
+    /* top | right | bottom | left */ 
+    padding: 0px 20px;
+}

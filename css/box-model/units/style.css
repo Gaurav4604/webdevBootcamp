@@ -1,0 +1,25 @@
+section{
+    width: 800px;
+    height: 800px;
+    background-color: grey; 
+}
+div{
+    /* % of the width of the parent element */
+    width: 70%; 
+    height: 20%;
+    background-color: pink;
+}
+h1{
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%; /* pushes the margin, 200% relative to the font-size of the element used */
+}
+h2{
+    font-size: 2em; /* the font size is 2 times the size of its parent element font-size */
+}
+p{
+    font-size: 0.8em; /* 0.8 times the parent font size */ 
+}
+article{
+    font-size: 30px;
+}
