@@ -1,0 +1,30 @@
+body{
+    background-color: #f1faee;
+}
+button{
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+#log-sign-btn{
+    background-color: #1d3557;
+    color: #fff;
+}
+.tag{
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 20px;
+}
+/* descendant selector */
+p a{
+    color: #457b9d;
+}
+.references a{
+    color: #e63946;
+}
+/* adjacent selector */
+input + button{
+    background-color: pink;
+}
+h2 + button{
+    font-size: 20px;
+}

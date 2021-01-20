@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <h1>Form Demo</h1>
+    <form action="/tacos">
+        <p>
+            <label for="username">Username:
+                <input type="text" id="username" placeholder="Username" name="usr">
+            </label>
+        </p>
+        <p>
+            <label for="password">Password:
+                <input type="password" id="password" placeholder="Password" name="pswd">
+            </label>
+        </p>
+        <div>
+            <label for="number">Number:
+                <input type="number" id="number" placeholder="Number">
+            </label>
+        </div>
+        <br>
+        <div>
+            <input type="color">
+            <input type="time">
+        </div>
+        <br>
+        <button type="button">
+            Submit (Wont Submit)
+        </button>
+        <input type="submit" value="Click me!">
+    </form>
+    <br><br>
+    <div>
+        <h1>Hijacking Search</h1>
+        <h1>Form action, Search Reddit</h1>
+        <form action="https://www.reddit.com/search">
+            <input type="text" name="q">
+            <button>Search Reddit</button>
+        </form>
+        <h1>Form action, Search Google</h1>
+        <form action="https://www.google.com/search">
+            <input type="text" name="q">
+            <button>Search Google</button>
+        </form>
+    </div>
+
+    <h2>More Inputs</h2>
+    <form action="/chickens">
+        <input type="checkbox" name="agree-t&c" id="agree" checked>
+        <label for="agree">I Agree to, Everything.</label>
+        <p>
+            <label for="xs">XS:</label>
+            <input type="radio" name="size" id="xs" value="xs">
+            <label for="s">S:</label>
+            <input type="radio" name="size" id="s" value="s">
+            <label for="m">M:</label>
+            <input type="radio" name="size" id="m" value="m">
+        </p>
+        <p>
+            <label for="meal">Please Select type Required</label>
+            <select name="meal" id="meal">
+                <option value="">--please Select a type--</option>
+                <option value="breakfast">breakfast</option>
+                <option value="lunch">lunch</option>
+                <option value="Dinner">Dinner</option>
+            </select>
+        </p>
+        <button>Submit</button>
+        <p>
+        <div>
+            <label for="awesomeness">Level of Awesomeness</label>
+            <input type="range" name="Awesomeness_level" id="awesomeness" min="1" max="100" step="10" value="60">
+        </div>
+        <br>
+        <p>
+            <label for="requests">Any Special Requests?</label>
+            <br>
+            <textarea name="special_requests" id="requests" cols="30" rows="10">type something here</textarea>
+        </p>
+        <button>Submit</button>
+        </p>
+    </form>
+
+    <h2>Validation</h2>
+    <form action="go/">
+        <p>
+            <label for="validation-pt1">Enter Name:</label>
+            <input type="text" id="validation-pt1" required>
+        </p>
+        <p>
+            <label for="validation-pt2">Enter Username:</label>
+            <input type="email" id="validation-pt2" minlength="5" maxlength="15" required>
+        </p>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>
