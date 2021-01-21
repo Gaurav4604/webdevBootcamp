@@ -9,17 +9,52 @@ div{
     height: 20%;
     background-color: pink;
 }
-h1{
+#ems h1{
     font-size: 40px;
     border: 1px solid black;
     line-height: 200%; /* pushes the margin, 200% relative to the font-size of the element used */
 }
-h2{
+#ems h2{
     font-size: 2em; /* the font size is 2 times the size of its parent element font-size */
+    margin-left: 1em; /* this 1 em is the same size as the font-size */
 }
-p{
-    font-size: 0.8em; /* 0.8 times the parent font size */ 
+#ems h3{
+    font-size: 1.5em; /* the font size is 1 times the size of its parent element font-size */
 }
-article{
-    font-size: 30px;
+#ems p{
+    font-size: 1em; /* 0.8 times the parent font size */ 
+}
+#ems{
+    font-size: 20px;
+}
+#ems ul{
+    font-size: 1.5em; /* since parent element size determines stuff
+    every nested list will be exponentially related */
+}
+/* rems part */
+#rems{
+    font-size: 20px;
+}
+#rems h1{
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%; /* pushes the margin, 200% relative to the font-size of the root element used */
+}
+#rems h2{
+    font-size: 2rem; /* the font size is 2 times the size of its root element font-size */
+    margin-left: 1rem; /* this 1 em is the same size as the font-size */
+}
+#rems h3{
+    font-size: 1.5rem; /* the font size is 1 times the size of its root element font-size */
+}
+#rems p{
+    font-size: 1rem; /* 0.8 times the root font size */ 
+}
+#rems{
+    font-size: 20px;
+}
+#rems ul{ 
+    font-size: 1.5rem; /* the elements inside nested list
+    are directly related to the root element
+    in this case, the article */
 }
