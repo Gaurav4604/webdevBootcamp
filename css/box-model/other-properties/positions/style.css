@@ -1,0 +1,41 @@
+div{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border: 1px solid black;
+    background-color: grey;
+    display: inline-block;
+}
+#middle{
+    background-color: darkslategrey;
+}
+#static #middle{
+    position: static; /* doesnt allow any changes to the position
+    of the element */
+    top: 100px; /* doesn't work as property is disabled by "static" */
+}
+
+#relative #middle{
+    position: relative;
+    top: 50px; /* 50px offset from top to its original position (thus it is relative)(pushing element 50px from top)*/ 
+    left: 50px; /* 50px offset from left to its original position (thus it is relative) (pushing element 50px from left)*/
+}
+#absolute{
+    position: relative;
+}
+#absolute #middle{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    /* this div position is absolute in context to 
+    its ancestor(section with id="absolute") */
+}
+#fixed #middle{
+    background-color: salmon;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    /* this div position is fixed in context to 
+    the web page, thus even if scrolling happens, it will
+    remain stuck to the given position of the page */
+}
