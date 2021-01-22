@@ -1,0 +1,47 @@
+h1{
+    background-color: #2a9d8f;
+    border: 5px solid black;
+    color: #eae2b7;
+    padding: 0.7em;
+    width: 300px;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 20px auto; /* if left and right margin is not defined
+    the margin is set to centre the parent container */
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+}
+h1:nth-of-type(2n){
+    background-color: #e9c46a;
+}
+h1:nth-of-type(3n){
+    background-color: #f4a261;
+}
+h1:nth-of-type(4n){
+    background-color: #e76f51;
+}
+section:nth-of-type(1) h1:nth-of-type(1){
+    transform-origin: top right; /* acts like the point from which
+    the element pivots */
+    transform: rotate(45deg);
+}
+section:first-of-type h1:nth-of-type(2){
+    transform: scale(0.7); /* shrinking the size */
+}
+section:nth-of-type(1) h1:nth-of-type(3){
+    transform: translateX(200px); /* pushing the element to the right, with the
+    original position as reference */
+}
+section:nth-of-type(1) h1:nth-of-type(4){
+    transform: translate(-10px,50px); /* pushing the element to left and bottom, with the
+    original position as reference */
+}
+section:nth-of-type(2) h1:nth-of-type(2){
+    transform: skew(10deg,30deg); /* stretches a particular div in directions specified */
+}
+section:nth-of-type(2) h1:nth-of-type(3){
+    transform: rotate(-20deg) scale(1.2) translateX(-400px) rotate(180deg); /* applying all properties together */
+}
+section:nth-of-type(2) {
+    transform: scale(0.3); /* shrinking the parent container itself */
+}
