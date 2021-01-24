@@ -1,0 +1,16 @@
+section{
+    width: 80%;
+    height: 800px;
+    /* background-image: url("https://miro.medium.com/max/1000/0*wZAcNrIWFFjuJA78");
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat; */
+    /*setting all properties of background together NOTE: order of placement of properties doesn't matter,
+    only the background-position and size, need to complement each other */
+    background: no-repeat url("https://miro.medium.com/max/1000/0*wZAcNrIWFFjuJA78") center/40%, blueviolet;
+    margin: 0 auto;
+}
+h1{
+    font-size: 100px;
+    color: #000;
+}
