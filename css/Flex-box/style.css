@@ -1,0 +1,158 @@
+body{
+    font-family: sans-serif;
+}
+h1{
+    text-align: center;
+}
+#container{
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex; /*turning on flexbox to start working (will shink child elements to fit into the parent container)*/
+    /* flexbox works with x-axis(row) as main axis
+    and y-axis(column) as cross axis*/
+    flex-direction: column; /*changing main axis from row to column */
+
+
+}
+#container div{
+    width: 200px;
+    height: 200px;
+}
+/* code for justify content region */
+#containerJustify{
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    justify-content: flex-end; /* moves content to the end of the main axis */
+    /* can also space around, space between, like flutter */
+} 
+#containerJustify div{
+    width: 100px;
+    height: 100px;
+}
+
+/* flex wrap */
+#flexWrap{
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse; /* moves content onto next line, if current content is overflowing
+    the content is moved along via the main axis */
+    /* reverse causes axis direction to change, if it is x-axis, it goes from right to left, rather than left to right
+    and bottom to top, rather than top to bottom */
+}
+#flexWrap div{
+    width: 150px;
+    height: 150px;
+}
+
+#Align-Items{
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /*the excess in top to bottom is moved to next line to the right */
+    justify-content: center; /* content is shifted to center */
+    /*align-items: baseline;  this aligns items using the center crossaxis of the largest
+    text element (use with wrap direction as row to see results)*/
+}
+#Align-Items div{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    font-size: 4em;
+}
+
+#Align-Content{
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    /* align-content: center; this makes all the elements taking up columns stick to 
+    each other */
+}
+#Align-Content div{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 4em;
+}
+#Align-Content div:nth-of-type(3){
+    align-self: center;
+}
+#Align-Content div:nth-of-type(2){
+    align-self: flex-end;
+}
+
+#Flex-BGS{
+    background-color: #003049;
+    width: 90%;
+    height: 200px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* flex-wrap: wrap; */
+}
+#Flex-BGS div{
+    width: 100px;
+    height: 100px;
+    /*max-width: 200px;*/  /* maximum width an element can take when flex is applied */
+    /* min-width: 90px; */
+    text-align: center;
+    flex-basis: 400px; /* basis will set a upper bound to which element grows
+    in both width and height */
+    font-size: 4em;
+    flex-shrink: 1;
+}
+#Flex-BGS div:nth-of-type(1){
+    flex-grow: 1; /* flex-grow will enable this element to grow taking up empty
+    space, in the direction it can take empty space */
+    flex-shrink: 3; /* the rate at which an element shrinks relative to other elements */
+}
+#Flex-BGS div:nth-of-type(5){
+    flex-grow: 2; /*this will have a flex-grow 2 times as above element */
+    flex-shrink: 0;
+}
+
+main{
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex;
+}
+main .sidebar{
+    background-color: #6930c3;
+    border: 2px solid #fff;
+    flex: 1 2 300px; /* if one value is passed, it is considered flex-grow */
+}
+main .maincontent{
+    background-color: #80ffdb;
+    flex: 2 1 600px; /* flex grow and flex basis are specified in it now */
+    /* if 3 values are used, properties are
+    flex-grow, flex-shrink, flex-basis */
+}
