@@ -1,0 +1,95 @@
+body{
+    font-family: 'Open Sans',sans-serif;
+
+}
+h1{
+    text-align: center;
+    font-size: 6em;    
+}
+nav{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+ul,li{
+    /*making navbar elements line up onto same axis */
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+/* order of the properties on ul, matters */
+ul{
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+/* at width of 800px or more, change color to purple  
+@media (min-width: 800px){
+    h1{
+        color: purple;
+    }
+}
+*/
+/* at width of 800px or less, change color to purple  
+@media (max-width: 800px){
+    h1{
+        color: purple;
+    }
+}
+*/
+/* from width of 600px to 800px have a color of purple */
+/* @media (min-width: 600px) and (max-width: 800px){
+    h1{
+        color: purple;
+    }
+} */
+
+@media (max-width: 500px){
+    h1{
+        color: red;
+    }
+}
+@media (min-width: 500px) and (max-width: 1000px){
+    h1{
+        color: orange;
+    }
+}
+@media (min-width: 1000px) and (max-width: 1500px){
+    h1{
+        color: yellow;
+    }
+}
+@media (min-width: 1500px){
+    h1{
+        color: green;
+    }
+}
+@media (orientation: landscape){
+    body{
+        background-color: grey;
+    }
+}
+/* different media queries applied */
+@media (max-width: 700px){
+    h1{
+        font-size: 4em;
+    }
+    /* changing the flex-direction, thus 
+    we use align-items rather than justify content, 
+    since th items are in cross axis now */
+    nav, ul{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 450px){
+    h1{
+        font-size: 3em;
+    }
+}
+@media (max-width: 350px){
+    h1{
+        font-size: 2em;
+    }
+}
