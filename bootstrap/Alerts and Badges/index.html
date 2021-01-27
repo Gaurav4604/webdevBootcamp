@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Alerts and Badges</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Badges</h1>
+        <button class="btn btn-secondary"> Secondary <span class="badge badge-success">10</span> </button>
+        <button class="btn btn-warning">Warnings <span class="badge bg-dark">8</span></button>
+
+        <hr>
+        <h1>Pill Badges</h1>
+        <button class="btn btn-secondary"> Secondary <span class="badge rounded-pill bg-primary">10</span> </button>
+        <button class="btn btn-warning">Warnings <span class="badge rounded-pill bg-dark">8</span></button>
+
+        <hr>
+        <h1>Button Groups</h1>
+        <div class="btn-group" role="group">
+            <button class="btn btn-success btn-lg">one</button>
+            <button class="btn btn-primary btn-lg">two</button>
+            <button class="btn btn-danger btn-lg">three</button>
+        </div>
+
+        <hr>
+        <h1>Alerts</h1>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h1 class="alert-heading">Oh no!</h1>
+            Danger! You're about to die
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
