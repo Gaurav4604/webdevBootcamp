@@ -73,3 +73,21 @@ const newMovies = Movies.map((movie) => (`${movie.title} - ${movie.score / 10}`)
 
 console.log(newMovies);
 
+//filter method
+// works based on a function working on array methods
+// and returning a boolean 
+const evens = nums.filter(n => {
+    return n % 2 === 0
+})
+
+console.log(evens);
+
+const goodMovies = Movies.filter(m => m.score > 95);
+const goodTitles = goodMovies.map(m => m.title)
+
+// can also be done as
+const merged = Movies.filter(m => m.score > 95).map(m => m.title);
+
+console.log(goodMovies)
+console.log(goodTitles)
+console.log(merged)
