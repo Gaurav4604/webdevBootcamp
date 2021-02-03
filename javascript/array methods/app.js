@@ -91,3 +91,55 @@ const merged = Movies.filter(m => m.score > 95).map(m => m.title);
 console.log(goodMovies)
 console.log(goodTitles)
 console.log(merged)
+
+
+// some or every methods
+const scores = [80, 92, 87, 78, 44, 69]
+
+// returns a boolean if every value inside an array passes a certain given test
+const goodClass = scores.every(score => score >= 75);
+
+console.log(goodClass);
+
+// returns a boolean if some values inside an array passes a certain given test
+const normalClass = scores.some(score => score >= 80);
+
+console.log(normalClass);
+
+
+// reduce function
+
+// reduces the array to a single value
+// depending on what function we pass inside the reduce
+const avgSum = scores.reduce((accumulator, score) => {
+    return accumulator + score;
+});
+
+console.log(avgSum);
+
+const minMarks = scores.reduce((min, score) => {
+    if (score < min)
+        return score;
+    else
+        return min;
+});
+
+console.log(minMarks);
+
+// this keyword
+const person = {
+    firstName: 'Viggo',
+    lastname: 'Mortensen',
+    fullname: (function () {
+        return `${this.firstName} ${this.lastname}`;
+    }),
+    shoutName: (function () {
+        setTimeout(() => {
+            console.log(this);
+            console.log(this.fullname());
+        });
+    })
+}
+
+// if this is used inside an arrow function without any explicit
+// scope mentioned, then it will go to the global scope, than the object scope
