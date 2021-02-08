@@ -58,6 +58,8 @@ console.log(squareImg.nextSibling); // returns a newline
 // the above whitespaces are generated due to spaces between the element Siblings
 
 
+// adding new elements to the webpage
+
 const newImg = document.createElement('img');
 
 newImg.src = 'https://avatars.githubusercontent.com/u/59768109?s=460&v=4';
@@ -72,4 +74,28 @@ h3.innerText = 'I am new!';
 document.body.appendChild(h3);
 
 const p = document.querySelector('p');
-p.append('I have been added to you!!!!!');
+p.append('I have been added to you!!!!!'); // adding values to a already defined element
+
+const bold = document.createElement('b');
+bold.innerText = "Hello, I am Bold";
+p.prepend(bold); // adding something to a begining of something
+
+const h2_new = document.createElement('h2');
+h2_new.append("This is a new H2");
+// inserting this h2 after the h1 already present in the document
+const h1_new = document.querySelector('h1');
+h1_new.insertAdjacentElement('afterend', h2_new); //using this we can append elements specified by the index we want
+// we can use indexs such as beforebegin, afterbegin, beforeend, afterend
+
+
+// removing elements from the page
+
+// using removeChild
+const firstLi = document.querySelector('li');
+
+firstLi.parentElement.removeChild(firstLi); // we need to remove the particular element we want
+// we need to switch to parent then access the child and delete it from there
+
+// directly removing an element from the page
+const img = document.querySelector('img');
+img.remove(); // thus directly removing the child from the page
