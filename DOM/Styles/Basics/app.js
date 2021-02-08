@@ -40,3 +40,36 @@ console.log(flag); // if value exists, it returns false
 flag = h2.classList.toggle('border');
 console.log(flag); // now it returns true
 
+const firstBold = document.querySelector('b');
+
+const paragraph = firstBold.parentElement; // returns the parent element of the document object
+
+console.log(paragraph.children[0]); // returns the 0th index inside the children list of paragraph element
+
+// first element with square class
+const squareImg = document.querySelector('.square');
+console.log(squareImg);
+// adjacent elements to squareImg are returned by the given functions 
+console.log(squareImg.previousElementSibling);
+console.log(squareImg.nextElementSibling);
+// the nodes containing element values are returned by the following functions
+console.log(squareImg.previousSibling); // returns a newline
+console.log(squareImg.nextSibling); // returns a newline
+// the above whitespaces are generated due to spaces between the element Siblings
+
+
+const newImg = document.createElement('img');
+
+newImg.src = 'https://avatars.githubusercontent.com/u/59768109?s=460&v=4';
+
+document.body.append(newImg);
+
+newImg.classList.add('square');
+
+const h3 = document.createElement('h3');
+
+h3.innerText = 'I am new!';
+document.body.appendChild(h3);
+
+const p = document.querySelector('p');
+p.append('I have been added to you!!!!!');
