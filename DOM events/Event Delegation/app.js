@@ -3,7 +3,7 @@ const tweet = document.querySelector('#tweet');
 
 const btn = document.querySelector('button');
 
-let list = document.querySelector('ul');
+let listCreate = document.querySelector('ul');
 
 btn.addEventListener('click', function () {
     let ls = document.createElement('li');
@@ -11,11 +11,12 @@ btn.addEventListener('click', function () {
     b.innerText = usr.value;
     ls.append(b);
     ls.append(` ${tweet.value}`);
-    list.append(ls);
+    listCreate.append(ls);
     usr.value = '';
     tweet.value = '';
 });
 
+let list = document.querySelector('ul');
 
 list.addEventListener('click', function (e) {
     console.log(e.target.nodeName);
