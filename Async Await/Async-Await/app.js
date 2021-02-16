@@ -45,7 +45,7 @@ const fakeRequest = (url) => {
         const rand = Math.random()
         setTimeout(() => {
             if (rand < 0.7)
-                resolve('Your Fake data here!', url);
+                resolve('Your Fake data here! ' + url);
             else
                 reject('Request Error');
         }, 2000);
@@ -63,6 +63,12 @@ async function rainbow() {
 rainbow().then((data) => console.log(data));
 
 async function makeTwoRequests() {
-    let data1 = await fakeRequest('page1/');
-    console.log(data1);
+    try {
+        let data1 = await fakeRequest('page1/');
+        let data2 = await fakeRequest('page2/');
+        console.log(data1, data2);
+    }
+    catch (err) {
+        console.log(err);
+    }
 }
