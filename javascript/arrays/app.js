@@ -116,3 +116,5 @@ numbers.pop();
 
 // we cannot set a new reference to the given array
 numbers = [2.3, 4, 5]; //this will throw an error
+
+console.log("Bye bye tata");
