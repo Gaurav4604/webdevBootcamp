@@ -10,6 +10,11 @@ let renderer = new THREE.WebGLRenderer({antialias: true, autoSize: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+
+window.onresize = function(){
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
 let obj;
 let flag = true;
 
@@ -53,6 +58,7 @@ function toggleEntity(){
     }
     else {
         console.log(selected);
+        scene.add(selected);
     }
     flag = !flag;
 }
