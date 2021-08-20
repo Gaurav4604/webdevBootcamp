@@ -3,7 +3,7 @@ let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(
     60,
     window.innerWidth/window.innerHeight,
-    .01,
+    .000001,
     1000
 );
 let renderer = new THREE.WebGLRenderer({antialias: true, autoSize: true});
@@ -25,7 +25,7 @@ controls.maxDistance = 1000;
 let loader = new GLTFLoader();
 
 let modelloader = () => {
-    loader.load('model/airplanemodelfinal.gltf', (gltf) => {
+    loader.load('model/UAV1_fin.gltf', (gltf) => {
         obj = gltf.scene;
         obj.name = "airplane";
         scene.add(obj);
