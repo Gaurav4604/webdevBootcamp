@@ -24,3 +24,5 @@ let people = [];
 names.forEach((name) => {
     people.push(new Person(name));
 });
+
+module.exports.Person = Person;
