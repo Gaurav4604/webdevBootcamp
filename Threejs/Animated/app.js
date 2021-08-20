@@ -1,9 +1,10 @@
-import {GLTFLoader} from "./ThreeJS_resources/GLTFLoader.js";
+import {FBXLoader} from './ThreeJS_resources/FBXLoader.js';
+
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(
     60,
     window.innerWidth/window.innerHeight,
-    .000001,
+    .01,
     1000
 );
 let renderer = new THREE.WebGLRenderer({antialias: true, autoSize: true});
@@ -15,6 +16,10 @@ window.onresize = function(){
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
+
+
+let mixer;
+
 let obj;
 let flag = true;
 
@@ -22,18 +27,32 @@ const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.minDistance = 1;
 controls.maxDistance = 500;
 
-let loader = new GLTFLoader();
+const fbxLoader = new FBXLoader();
 
-let modelloader = () => {
-    loader.load('model/drone.gltf', (gltf) => {
-        obj = gltf.scene;
-        obj.name = "airplane";
-        scene.add(obj);
-    });
-}
+fbxLoader.load(
+    'models/drone_animated.fbx',
+    (object) => {
 
-modelloader();
+        obj = object.scene;
+        mixer = new THREE.AnimationMixer( object );
 
+    const action = mixer.clipAction( object.animations[ 0 ] );
+    action.play();
+
+    object.traverse( function ( child ) {
+
+        if ( child.isMesh ) {
+
+            child.castShadow = true;
+            child.receiveShadow = true;
+
+        }
+
+    } );
+
+    scene.add( object );
+    }
+)
 
 scene.background = new THREE.Color(0x696969);
 
@@ -44,29 +63,17 @@ scene.add(light2);
 camera.position.set(0, 50, 250);
 function animate(){
     requestAnimationFrame(animate);
-    obj.rotation.y += 0.003;
+    // obj.rotation.y += 0.003;
     renderer.render(scene, camera);
 
     controls.update();
 }
 
-let selected;
-
-function toggleEntity(){
-    if (flag){
-        selected = scene.getObjectByName(obj.name);
-        scene.remove(selected);
-        animate();
-    }
-    else {
-        console.log(selected);
-        scene.add(selected);
-    }
-    flag = !flag;
-}
-
-let btn = document.querySelector('#toggler');
-btn.addEventListener('click', toggleEntity);
-
-
 animate();
+
+// const loader = new FBXLoader();
+// loader.load( 'models/fbx/Samba Dancing.fbx', function ( object ) {
+
+    
+
+// } );
