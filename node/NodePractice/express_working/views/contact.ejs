@@ -9,5 +9,15 @@
 <body>
     <h1>Contact Me</h1>
     <%- include ('partials/nav.ejs') -%> 
+
+    <form method="POST" action="/contact">
+        <label for="who">Who do you want to contact</label>
+        <input type="text" name="who" id="">
+
+        <label for="age">Age of Person</label>
+        <input type="text" name="age" id="">
+
+        <button type="submit" value="submit">submit</button>
+    </form>
 </body>
 </html>
