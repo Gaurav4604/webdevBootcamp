@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     $('form').on('submit', function(){
   
-        var item = $('form input');
+        var item = $('form > input');
         var todo = {item: item.val()};
   
         $.ajax({
@@ -21,6 +21,7 @@ $(document).ready(function(){
   
     $('li').on('click', function(){
         var item = $(this).text().replace(/ /g, "-");
+        console.log(item)
         $.ajax({
           type: 'DELETE',
           url: '/todo/' + item,
